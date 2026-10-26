@@ -156,3 +156,50 @@ body {
 .btn-login:hover {
   background-color: var(--color-primary-dark);
 }
+
+
+/* ---------- MENU RESPONSIVO (botão ☰ Menu) ---------- */
+/* No computador o botão fica escondido: o menu já aparece normalmente */
+.btn-menu {
+  display: none;
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.btn-menu:hover {
+  border-color: var(--color-primary);
+}
+
+/* No celular/tablet: o menu começa escondido e a classe "ativo" o mostra */
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;   /* permite o menu descer para uma linha própria */
+  }
+
+  .btn-menu {
+    display: inline-block;
+  }
+
+  .main-nav {
+    display: none;     /* escondido por padrão */
+    width: 100%;
+    order: 3;          /* vai para o fim, abaixo de logo, botão e ações */
+  }
+
+  .main-nav.ativo {
+    display: block;    /* o JavaScript só adiciona/remove "ativo"; o CSS decide a aparência */
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

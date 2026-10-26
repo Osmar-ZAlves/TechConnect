@@ -47,8 +47,12 @@
                 <span class="logo-text">Tech<span class="logo-highlight">Connect</span></span>
             </a>
 
+            <!-- BOTÃO DO MENU: aparece só no celular; o script.js escuta o clique nele pelo id -->
+            <button type="button" id="btn-menu" class="btn-menu">☰ Menu</button>
+
             <!-- NAV: menu de navegação principal do site -->
-            <nav class="nav">
+            <!-- A classe "main-nav" é a que o JavaScript procura; "nav" continua para o CSS existente -->
+            <nav class="nav main-nav">
                 <!-- Lista de links do menu -->
                 <ul class="nav-list">
                     <!-- Página atual: usa a classe "active" para ser destacada no CSS -->
@@ -88,6 +92,9 @@
 
         </div>
     </header>
+
+    <!-- O script fica no final do body para o HTML já existir quando ele rodar -->
+    <script src="script.js"></script>
 
 </body>
 
